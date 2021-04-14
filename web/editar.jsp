@@ -52,8 +52,21 @@
 
                 <tr>
                     <td>Vacunado</td>
-                    <td><input type="text" name="vacuna" 
-                               value="<jsp:getProperty name="miVacuna" property="vacuna" />">               
+                    <td><select name="vacuna">
+                            <option value="Si"
+                                <c:if test="${miVacuna.vacuna == 'Si'}"
+                                      var="res" scope="request">
+                                    selected
+                                </c:if>
+                                >Si</option>
+                            
+                             <option value="No"
+                                <c:if test="${miVacuna.vacuna == 'No'}"
+                                      var="res" scope="request">
+                                    selected
+                                </c:if>
+                                >No</option>                              
+                        </select>       
                     </td> 
                 </tr>   
                 <tr>
